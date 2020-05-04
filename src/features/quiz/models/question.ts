@@ -1,18 +1,15 @@
 import {attach, combine, createEffect, createEvent, createStore, sample} from 'effector'
-import {list} from 'lib/kana-syllabary'
 
-import {randomInt} from 'lib/generate/random-int'
+import {randomInt} from 'lib/array/random-int'
 
-import {QuestionState, QuestionType, QuizType} from '../types'
+import {QuestionState, QuestionType, QuizType, SymbolInfo} from '../types'
 import {$questionsList, $quizType} from './settings'
 
-type QuestionInfo = (typeof list)[number]
 
 
 export const $questionId = createStore(0)
 export const $questionInfo = combine($questionId, $questionsList, (id, list) => list[id])
 export const $questionState = createStore<QuestionState>('wait')
-export const $questionType = createStore<QuestionType>('hiragana')
 export const $questionError = createStore<string | null>(null)
 
 export const $question = combine({
@@ -20,17 +17,17 @@ export const $question = combine({
   state: $questionState,
   error: $questionError,
   id: $questionId,
-  type: $questionType,
 })
 
 export const nextQuestion = createEvent()
 
-type CheckUserAnswerParams  = { type: QuizType, answer: string, question: QuestionInfo }
+type CheckUserAnswerParams  = { type: QuizType, answer: string, question: SymbolInfo }
 
 const checkUserAnswer = createEffect<CheckUserAnswerParams, boolean>({
   handler: (params) => {
+    const { data, group, name } = params.question
     if (params.type === 'romaji') {
-      if (params.question[0] !== params.answer) throw new Error(`Правильный ответ - ${params.question[0]}`)
+      if (data[0] !== params.answer) throw new Error(`Правильный ответ - ${data[0]}`)
     }
     return true
   }
@@ -38,7 +35,7 @@ const checkUserAnswer = createEffect<CheckUserAnswerParams, boolean>({
 
 export const userAnswered = attach({
   effect: checkUserAnswer,
-  source: combine({ type: $quizType, question: $questionInfo, questionType: $questionType }),
+  source: combine({ type: $quizType, question: $questionInfo }),
   mapParams: (answer: string, { type, question }) => ({ type, answer, question })
 })
 
@@ -50,12 +47,6 @@ $questionState.on($questionId, () => 'wait')
 $questionError.reset($questionId)
 $questionError.on(checkUserAnswer.failData, (_ , error) => error.message)
 
-$questionType.on(sample($quizType, nextQuestion), (_, quizType) => {
-  if (quizType === 'kana') return 'romaji'
-  const options = ['hiragana', 'katakana'] as const
-  const idx = randomInt(options.length)
-  return options[idx]
-})
 
 $questionId.on(sample($questionsList, nextQuestion), (current, list) => {
   let next = current

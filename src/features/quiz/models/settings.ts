@@ -1,6 +1,6 @@
-import {createStore} from 'effector'
+import {createEvent, createStore} from 'effector'
 
-import {list} from 'lib/kana-syllabary'
+import {QUESTIONS_LIST} from 'lib/kana-syllabary'
 
 import {QuizType} from '../types'
 
@@ -9,5 +9,7 @@ export const $quizType = createStore<QuizType>('romaji')
 
 export const $allowedTypes = createStore([])
 
-export const $questionsList = createStore(list)
+export const $questionsList = createStore(QUESTIONS_LIST)
+
+export const reset = createEvent()
 

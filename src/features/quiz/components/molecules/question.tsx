@@ -31,7 +31,7 @@ const Question = ({ answers }: Props) => {
     inputRef.current?.focus()
   }, [info])
 
-  const submit = useCallback((e: React.KeyboardEvent) => {
+  const handleEnterKeyPress = useCallback((e: React.KeyboardEvent) => {
     if (e.key !== 'Enter') return
     e.preventDefault()
 
@@ -39,12 +39,11 @@ const Question = ({ answers }: Props) => {
       if (answers !== null) return
       return userAnswered(result)
     }
-    if (isEmpty) return
     nextQuestion()
-  }, [state, result, answers, isEmpty])
+  }, [ state, result, answers ])
 
   return (
-    <Form onKeyPress={submit}>
+    <Form onKeyPress={handleEnterKeyPress}>
       <QuestionGlyph />
       {answers != null && (
         <Answers count={answers} result={result} setResult={setResult} />

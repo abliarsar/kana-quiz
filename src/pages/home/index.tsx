@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import {paths} from './paths'
+import {paths} from '../paths'
 
 
 const Home = () => (

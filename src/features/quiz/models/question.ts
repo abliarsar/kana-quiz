@@ -50,6 +50,7 @@ $questionError.on(checkUserAnswer.failData, (_ , error) => error.message)
 
 $questionId.on(sample($questionsList, nextQuestion), (current, list) => {
   let next = current
+  if (list.length === 0) return
   while (next === current) {
     next = randomInt(list.length)
   }

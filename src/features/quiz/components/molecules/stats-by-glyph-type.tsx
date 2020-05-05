@@ -2,6 +2,8 @@ import React from 'react'
 import {useStore} from 'effector-react'
 import styled from 'styled-components'
 
+import {getPercentsFromStats} from 'lib/get-percents-from-stats'
+
 import {$statsByType} from '../../models/stats'
 import {KanaType} from '../../types'
 
@@ -40,7 +42,7 @@ const StatBlock = (props: { stats: [number, number], title: string }) => {
         <div className="cell cell--red">{wrong}</div>
       </div>
       <div>
-        {Math.trunc(correct * 100 / (correct + wrong)) || 0} %
+        {getPercentsFromStats(correct, wrong)} %
       </div>
     </StatsSectionStyles>
   )

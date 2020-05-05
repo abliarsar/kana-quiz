@@ -3,6 +3,7 @@ import {KanaType, SymbolGroupTag, SymbolType} from '../../types'
 import {SYMBOL_GROUPS} from '../../../../lib/kana-syllabary'
 import {useStore} from 'effector-react'
 import {$allowedGroupTypes, toggleGroupType} from '../../models/settings'
+import styled from 'styled-components'
 
 
 const KANA_NAMES = {
@@ -37,11 +38,12 @@ const QuizSettings = () => {
   const checked = useStore($allowedGroupTypes)
 
   return (
-    <section>
+    <Styles>
+      <h3>Настройки</h3>
       {tagsByKanaType.map(([kana, groups]) => {
         const all = groups.every(group => checked.includes(group))
         return (
-          <>
+          <React.Fragment key={kana}>
             <div onClick={() => {
               if (all) { toggleGroupType(groups) }
               else {
@@ -55,11 +57,11 @@ const QuizSettings = () => {
               />
               {KANA_NAMES[kana]}
             </div>
-            <div>
+            <div style={{paddingLeft: 20 }}>
               {groups.map((group) => {
                 const [_, symbolType] = group
                 return (
-                  <div onClick={() => toggleGroupType(group)}>
+                  <div onClick={() => toggleGroupType(group)} key={symbolType}>
                     <input
                       type="checkbox"
                       readOnly
@@ -70,11 +72,20 @@ const QuizSettings = () => {
                 )
               })}
             </div>
-          </>
+          </React.Fragment>
         )
       })}
-    </section>
+    </Styles>
   )
 }
 
 export default QuizSettings
+
+const Styles = styled.section`
+  display: inline-block;
+  max-width: 300px;
+  h3 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+`

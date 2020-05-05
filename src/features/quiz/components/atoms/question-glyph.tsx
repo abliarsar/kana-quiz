@@ -3,19 +3,38 @@ import {useStore} from 'effector-react'
 
 import {$question} from '../../models/question'
 import {$quizType} from '../../models/settings'
+import styled from 'styled-components'
+import classNames from 'classnames'
 
 
 const QuestionGlyph = () => {
-  const { info } = useStore($question)
+  const { info, state } = useStore($question)
   const type = useStore($quizType)
 
   const index = type == 'kana' ? 0 : 1
 
   return (
-    <div style={{fontSize: 36}}>
+    <Styles className={classNames(state, { pad: type == 'romaji' })}>
       {info.data[index]}
-    </div>
+    </Styles>
   )
 }
 
 export default QuestionGlyph
+
+const Styles = styled.div`
+  font-size: 70px;
+  text-align: center;
+  font-weight: bolder;
+  border: 2px solid #333;
+  border-radius: 5px;
+  &.done {
+    border-color: forestgreen;
+  }
+  &.fail {
+   border-color: darkred;
+  }
+  &.pad {
+    padding-bottom: 10px;
+  }
+`

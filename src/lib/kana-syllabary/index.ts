@@ -161,3 +161,4 @@ export const QUESTIONS_LIST = SYMBOL_GROUPS.reduce<SymbolInfo[]>((acc, group) =>
   }))
   return acc.concat(glyphs)
 }, [])
+

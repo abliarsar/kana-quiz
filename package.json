@@ -1,18 +1,14 @@
 {
-  "name": "olimp-react",
-  "version": "2.5.3",
-  "build-version": "70",
+  "name": "kana-quiz",
+  "version": "0.0.1",
   "description": "",
-  "main": "server/index.js",
-  "bin": {
-    "olimp": ".bin/cli.js"
-  },
+  "main": "src/main.tsx",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev FAST_REFRESH=true webpack-dev-server --mode=development",
     "build": "cross-env NODE_ENV=production webpack --progress --mode=production"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Ivan Savichev",
+  "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "@babel/runtime": "^7.9.6",

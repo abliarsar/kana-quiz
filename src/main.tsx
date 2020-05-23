@@ -11,7 +11,7 @@ const root = document.getElementById('root')!
 const App = () => (
   <>
     <GlobalStyles />
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_PATH}>
       <Pages />
     </BrowserRouter>
   </>

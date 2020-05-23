@@ -57,12 +57,7 @@ module.exports = ({
       inject: 'body',
       "chunksSortMode": 'none'
     }),
-    new SWPrecacheWebpackPlugin(serviceWorkerConfig()),
-    new CopyWebpackPlugin([
-      {
-        from: './src/assets/static/',
-      },
-    ]),
+    // new SWPrecacheWebpackPlugin(serviceWorkerConfig()),
   ].filter(Boolean),
   optimization: {
     minimizer: [

@@ -1,7 +1,7 @@
 const path = require('path')
 
 
-const PUBLIC_PATH = '/static/'
+const PUBLIC_PATH = '/'
 
 const PROJECT_ROOT = path.resolve(__dirname, '../')
 const PROJECT_SRC = path.join(PROJECT_ROOT, 'src')

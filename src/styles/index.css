@@ -10,8 +10,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+  --white-color: #fefefe;
   --error-color: #ff2e43;
   --success-color: #21a038;
+
   --surface-color: #242424;
   --surface-color-secondary: #333;
   --text-color: rgba(255, 255, 255, 0.87);
@@ -52,4 +54,16 @@ body {
 
 .centered {
   text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --surface-color: var(--white-color);
+    --surface-color-secondary: #dedede;
+    --text-color: #213547;
+
+  }
+  a:hover {
+    color: #747bff;
+  }
 }

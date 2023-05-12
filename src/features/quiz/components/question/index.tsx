@@ -121,7 +121,7 @@ const Input = styled.input`
   text-align: center;
   padding: 0 5px;
   outline: none;
-  background: white;
+  background: var(--white-color);
   &:focus {
     outline: none;
     box-shadow: 0 0 3px aquamarine;
@@ -132,8 +132,9 @@ const Input = styled.input`
 `
 
 const Status = styled.div`
-  height: 30px;
+  height: 2rem;
   text-align: center;
+  font-weight: 500;
   &.wrong {
     color: var(--error-color);
   }
@@ -144,8 +145,10 @@ const Status = styled.div`
 
 const Button = styled.button`
   padding: 5px 10px;
-  margin: 0 10px;
+  margin: 0 0.625rem;
   font-size: 1rem;
+  cursor: pointer;
+  background: var(--white-color);
   &[disabled] {
     opacity: .5;
   }

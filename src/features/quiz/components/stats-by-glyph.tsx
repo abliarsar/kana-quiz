@@ -27,10 +27,10 @@ const StatsByGlyph = ({ stats = {} }: StatsByGlyphProps) => {
       <Table>
        <thead>
        <tr>
-         <th>Символ</th>
-         <th>Верно</th>
-         <th>Ошибок</th>
-         <th>%</th>
+         <th width="25%">Символ</th>
+         <th width="25%">Верно</th>
+         <th width="25%">Ошибок</th>
+         <th width="25%">%</th>
        </tr>
        </thead>
        <tbody>
@@ -77,6 +77,11 @@ const Table = styled.table`
     }
     &:last-child {
       padding-right: 0.5rem;
+    }
+  }
+  td {
+    &:first-child {
+      font-weight: 600;
     }
   }
   tbody tr:nth-child(odd) {

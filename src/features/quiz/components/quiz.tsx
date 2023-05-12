@@ -64,15 +64,19 @@ const Quiz = ({ type }: Props) => {
       </ModalPanel>
       <Styles>
         <ActionsRow>
-          <div onClick={() => setSettingsOpen(v => !v)}>
+          <Action onClick={() => setSettingsOpen(v => !v)}>
             <SettingsIcon />
-          </div>
-          <div onClick={() => dispatch({ type: QuizActionType.reset })}>
+            <span>Настройки</span>
+          </Action>
+          <Action onClick={() => dispatch({ type: QuizActionType.reset })}>
             <ResetIcon />
-          </div>
-          <div onClick={() => setStatsOpen(v => !v)}>
+            <span>Сброс</span>
+
+          </Action>
+          <Action onClick={() => setStatsOpen(v => !v)}>
             <StatsIcon />
-          </div>
+            <span>Статистика</span>
+          </Action>
         </ActionsRow>
         <Question
           answers={state.settings.answers}
@@ -164,3 +168,18 @@ const ActionsRow = styled(FlexRow)`
   }
 `;
 
+const Action = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding: 0.25rem 0.625rem;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background: var(--surface-color-secondary);
+  }
+  & + & {
+    margin-left: 0.25rem;
+  }
+`

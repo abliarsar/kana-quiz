@@ -91,11 +91,10 @@ const updateQuestionStatus = (state: QuizState, answer: string) => {
 
   const isRomajiQuiz = state.settings.quizType === 'romaji'
   const answerIndex = isRomajiQuiz ? 0 : 1;
-  const questionIndex = isRomajiQuiz ? 1 : 0;
   const correctAnswer = data[answerIndex];
 
   const statistics = updateStats(state.statistics, {
-    character: data[questionIndex],
+    character: data[1],
     correct: correctAnswer === answer,
     type: kanaType
   });
@@ -193,7 +192,7 @@ export const useQuiz = (hasAnswers: boolean, quizType: QuizType) => {
     question: getNewQuestionFromList(null, QUESTIONS_LIST),
     settings: {
       groups: SYMBOL_GROUPS.map(i => i.type),
-      answers: hasAnswers ? 5 : null,
+      answers: hasAnswers ? 6 : null,
       quizType,
     },
     questions: QUESTIONS_LIST

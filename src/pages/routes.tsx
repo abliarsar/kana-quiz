@@ -22,5 +22,5 @@ export const router = createBrowserRouter([
     element: <QuizWithInput />,
   },
 ], {
-
+  basename: '/kana-quiz/'
 });

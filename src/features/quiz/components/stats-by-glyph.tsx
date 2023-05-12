@@ -27,10 +27,10 @@ const StatsByGlyph = ({ stats = {} }: StatsByGlyphProps) => {
       <Table>
        <thead>
        <tr>
-         <th width="25%">Символ</th>
-         <th width="25%">Верно</th>
-         <th width="25%">Ошибок</th>
-         <th width="25%">%</th>
+         <th>Символ</th>
+         <th >Верно</th>
+         <th>Ошибок</th>
+         <th>%</th>
        </tr>
        </thead>
        <tbody>
@@ -40,10 +40,10 @@ const StatsByGlyph = ({ stats = {} }: StatsByGlyphProps) => {
          const percent = getPercentsFromStats(correct, wrong)
          return (
            <tr key={key}>
-             <td>{key}</td>
-             <td>{correct}</td>
-             <td>{wrong}</td>
-             <td>{percent}</td>
+             <td width="25%">{key}</td>
+             <td width="25%">{correct}</td>
+             <td width="25%">{wrong}</td>
+             <td width="25%">{percent}</td>
            </tr>
          )
        })}

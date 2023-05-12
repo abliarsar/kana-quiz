@@ -1,8 +1,12 @@
 import Quiz from 'features/quiz/components/quiz';
+import Header from 'components/header';
 
 const QuizWithPicker = () => {
   return  (
-    <Quiz type="picker" />
+    <>
+      <Header/>
+      <Quiz type="picker" />
+    </>
   )
 };
 

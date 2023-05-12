@@ -92,7 +92,9 @@ const Quiz = ({ type }: Props) => {
         <StatsByType stats={state.statistics?.byType} />
       </Styles>
       <ModalPanel isVisible={isStatsOpen}>
-        <div className="close-button" onClick={() => setStatsOpen(false)}>X</div>
+        <div className="close-button" onClick={() => setStatsOpen(false)}>
+          <CloseIcon />
+        </div>
         <StatsByGlyph stats={state.statistics?.byGlyph} />
       </ModalPanel>
     </FlexRow>

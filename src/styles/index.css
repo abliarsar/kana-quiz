@@ -1,15 +1,6 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 
   --white-color: #fefefe;
   --error-color: #ff2e43;
@@ -19,8 +10,6 @@
   --surface-color-secondary: #333;
   --text-color: rgba(255, 255, 255, 0.87);
 
-  background-color: var(--surface-color);
-  color: var(--text-color);
 
 }
 
@@ -51,20 +40,34 @@ body {
   width: 100%;
   box-sizing: border-box;
   min-height: 100vh;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  background-color: var(--surface-color);
+  color: var(--text-color);
+
+  transition: color, background-color.2s ease;
 }
 
 .centered {
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --surface-color: var(--white-color);
-    --surface-color-secondary: #dedede;
-    --text-color: #213547;
+[data-theme="light"] {
+  --surface-color: var(--white-color);
+  --surface-color-secondary: #eee;
+  --text-color: #213547;
 
-  }
-  a:hover {
-    color: #747bff;
-  }
+}
+
+[data-theme="light"] a:hover {
+  color: #747bff;
 }

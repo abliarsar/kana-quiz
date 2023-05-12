@@ -1,4 +1,4 @@
 export const paths = {
   home: () => '/',
-  quiz: (answerType: string, withAnswers: boolean) => `/quiz/${answerType}/${withAnswers ? 'picker' : 'input'}`,
-}
+  quiz: (params: { quizType: string, withAnswers: boolean }) => `/quiz/${params.withAnswers ? 'picker' : 'input'}/${params.quizType}/`,
+};

@@ -1,20 +1,21 @@
 import React from 'react'
-import { render } from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
+import ReactDOM from 'react-dom/client'
+import { RouterProvider } from 'react-router-dom';
+import styled from 'styled-components';
 
-import { GlobalStyles } from './styles/global-styles'
-import { Pages } from './pages'
+import { router } from './pages/routes'
+import './styles/index.css'
+
+const Container = styled.main`
+  margin: 0 auto;
+  padding: 0.5rem;
+  max-width: 1200px;
+`;
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <Container>
+    <RouterProvider router={router} />
+  </Container>
+);
 
 
-const root = document.getElementById('root')!
-
-const App = () => (
-  <>
-    <GlobalStyles />
-    <BrowserRouter basename={process.env.PUBLIC_PATH}>
-      <Pages />
-    </BrowserRouter>
-  </>
-)
-
-render(<App/>, root)

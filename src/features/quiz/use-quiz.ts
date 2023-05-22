@@ -86,20 +86,32 @@ const updateStats = (prevStats: QuizState['statistics'], answer: { character: st
   return nextStats
 }
 const updateQuestionStatus = (state: QuizState, answer: string) => {
+  const normalizedAnswer = answer.toLowerCase();
   if (!state.question || state.question.state !== QuestionState.in_progress ) return state;
-  const { data, group: [kanaType] } = state.question.info;
+  const { data: [romaji, glyph], group: [kanaType] } = state.question.info;
 
   const isRomajiQuiz = state.settings.quizType === 'romaji'
-  const answerIndex = isRomajiQuiz ? 0 : 1;
-  const correctAnswer = data[answerIndex];
+  const correctAnswer = isRomajiQuiz ? romaji : glyph
+  const isCorrect = correctAnswer === normalizedAnswer;
 
   const statistics = updateStats(state.statistics, {
-    character: data[1],
-    correct: correctAnswer === answer,
+    character: glyph,
+    correct: isCorrect,
     type: kanaType
   });
 
-  if (answer !== correctAnswer) {
+  if (isCorrect) {
+    return {
+      ...state,
+      statistics,
+      question: {
+        ...state.question,
+        state: QuestionState.correct
+      }
+    }
+
+  }
+  else {
     return {
       ...state,
       statistics,
@@ -108,16 +120,6 @@ const updateQuestionStatus = (state: QuizState, answer: string) => {
         error: `Правильный ответ - ${correctAnswer}`,
         state: QuestionState.wrong
       },
-    }
-  }
-  else {
-    return {
-      ...state,
-      statistics,
-      question: {
-        ...state.question,
-        state: QuestionState.correct
-      }
     }
   }
 }

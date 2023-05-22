@@ -122,6 +122,7 @@ const Input = styled.input`
   padding: 0 5px;
   outline: none;
   background: var(--white-color);
+  color: var(--black-color);
   &:focus {
     outline: none;
     box-shadow: 0 0 3px aquamarine;
@@ -149,6 +150,7 @@ const Button = styled.button`
   font-size: 1rem;
   cursor: pointer;
   background: var(--white-color);
+  color: var(--black-color);
   &[disabled] {
     opacity: .5;
   }

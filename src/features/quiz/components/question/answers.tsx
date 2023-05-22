@@ -60,6 +60,7 @@ const Button = styled.button`
   
   cursor: pointer;
   background: var(--white-color);
+  color: var(--black-color);
   border: 1px solid var(--text-color);
   border-radius: 5px;
   &:disabled {

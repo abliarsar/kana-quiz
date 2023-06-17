@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import ColorModeToggle from 'features/color-mode/toggle';
+import { LanguageSelect } from 'features/i18n';
 import { paths } from 'pages/paths';
 
 
@@ -15,13 +16,24 @@ const Header = () => {
           <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
         </svg>
       </div>
-      <ColorModeToggle />
+      <ContentRight>
+        <ColorModeToggle />
+        <LanguageSelect />
+      </ContentRight>
     </Root>
   )
 }
 
 export default Header;
 
+
+const ContentRight = styled.div`
+  display: flex;
+  > :first-child {
+    margin-right: 0.5rem;
+  }
+  padding-right: 0.5rem;
+`;
 
 const Root = styled.header`
   display: flex;

@@ -1,0 +1,108 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-05-22 10:13+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ru\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/pages/home/index.tsx:17
+msgid "Без вариантов ответа"
+msgstr "Без вариантов ответа"
+
+#: src/features/quiz/components/stats-by-glyph.tsx:43
+msgid "Верно"
+msgstr "Верно"
+
+#: src/features/quiz/components/question/index.tsx:78
+msgid "Верно!"
+msgstr "Верно!"
+
+#: src/pages/home/index.tsx:12
+msgid "Выберите тест"
+msgstr "Выберите тест"
+
+#: src/features/quiz/components/question/index.tsx:82
+msgid "Выберите хотя бы одну категорию"
+msgstr "Выберите хотя бы одну категорию"
+
+#: src/features/quiz/components/settings.tsx:15
+msgid "Диграфы"
+msgstr "Диграфы"
+
+#: src/features/quiz/components/settings.tsx:16
+msgid "Диграфы c диакритикой"
+msgstr "Диграфы c диакритикой"
+
+#: src/features/quiz/components/settings.tsx:10
+msgid "Катакана"
+msgstr "Катакана"
+
+#: src/features/quiz/components/settings.tsx:13
+msgid "Монографы"
+msgstr "Монографы"
+
+#: src/features/quiz/components/settings.tsx:14
+msgid "Монографы c диакритикой"
+msgstr "Монографы c диакритикой"
+
+#: src/features/quiz/components/quiz.tsx:72
+msgid "Настройки"
+msgstr "Настройки"
+
+#: src/features/quiz/components/stats-by-glyph.tsx:30
+msgid "Нет результатов"
+msgstr "Нет результатов"
+
+#: src/features/quiz/components/question/index.tsx:92
+msgid "Ответить"
+msgstr "Ответить"
+
+#: src/features/quiz/components/stats-by-glyph.tsx:44
+msgid "Ошибок"
+msgstr "Ошибок"
+
+#: src/pages/home/index.tsx:22
+#: src/pages/home/index.tsx:30
+msgid "С вариантами ответов"
+msgstr "С вариантами ответов"
+
+#: src/features/quiz/components/quiz.tsx:80
+msgid "Сброс"
+msgstr "Сброс"
+
+#: src/features/color-mode/toggle.tsx:45
+msgid "Светлый режим"
+msgstr "Светлый режим"
+
+#: src/features/quiz/components/stats-by-glyph.tsx:42
+msgid "Символ"
+msgstr "Символ"
+
+#: src/features/quiz/components/question/index.tsx:101
+msgid "Следующий вопрос"
+msgstr "Следующий вопрос"
+
+#: src/features/quiz/components/quiz.tsx:88
+#: src/features/quiz/components/stats-by-glyph.tsx:21
+msgid "Статистика"
+msgstr "Статистика"
+
+#: src/features/color-mode/toggle.tsx:40
+msgid "Тёмный режим"
+msgstr "Тёмный режим"
+
+#: src/features/quiz/components/settings.tsx:9
+msgid "Хирагана"
+msgstr "Хирагана"
+
+#: src/features/color-mode/toggle.tsx:35
+msgid "Цветовая схема"
+msgstr "Цветовая схема"

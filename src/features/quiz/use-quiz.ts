@@ -1,5 +1,5 @@
 import { Dispatch, Reducer, ReducerAction, useReducer } from 'react';
-import { IQuestion, KanaType, QuestionState, QuizType, StatsByType, SymbolGroupTag, SymbolInfo, StatsByGlyph, AnswerStats } from 'features/quiz/types';
+import { IQuestion, KanaType, QuestionState, QuizType, IStatsByType, SymbolGroupTag, SymbolInfo, IStatsByGlyph, AnswerStats } from 'features/quiz/types';
 import { QUESTIONS_LIST, SYMBOL_GROUPS } from 'lib/kana';
 import { randomInt } from 'lib/array';
 
@@ -13,8 +13,8 @@ type QuizState = {
   },
   questions: SymbolInfo[],
   statistics?: {
-    byGlyph: StatsByGlyph,
-    byType: StatsByType
+    byGlyph: IStatsByGlyph,
+    byType: IStatsByType
   },
 }
 
@@ -199,6 +199,6 @@ export const useQuiz = (hasAnswers: boolean, quizType: QuizType) => {
     },
     questions: QUESTIONS_LIST
   }
-  // todo: webstorm typescript
-  return useReducer(reducer, initialState) as any as [QuizState, Dispatch<ReducerAction<typeof reducer>>]
+
+  return useReducer(reducer, initialState)
 }

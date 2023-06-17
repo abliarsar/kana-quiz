@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import { Trans } from '@lingui/react';
 
 import { QuizActionType, useQuiz } from 'features/quiz/use-quiz';
 import StatsIcon from './icons/statistics';
@@ -12,8 +14,7 @@ import { QuizType } from '../types';
 import Settings from './settings';
 import Question from './question';
 import StatsByType from './stats-by-type';
-import StatsByGlyph from 'features/quiz/components/stats-by-glyph';
-import { useEffect, useState } from 'react';
+import StatsByGlyph from './stats-by-glyph';
 
 
 type Props = {
@@ -44,7 +45,8 @@ const Quiz = ({ type }: Props) => {
     return () => {
       query.removeEventListener('change', listener)
     }
-  }, [])
+  }, []);
+
   return (
     <FlexRow>
       <ModalPanel isVisible={isSettingsOpen}>
@@ -66,16 +68,21 @@ const Quiz = ({ type }: Props) => {
         <ActionsRow>
           <Action onClick={() => setSettingsOpen(v => !v)}>
             <SettingsIcon />
-            <span>Настройки</span>
+            <span>
+              <Trans id="Z3HtMJ" />
+            </span>
           </Action>
           <Action onClick={() => dispatch({ type: QuizActionType.reset })}>
             <ResetIcon />
-            <span>Сброс</span>
-
+            <span>
+              <Trans id="J3SAYT" />
+            </span>
           </Action>
           <Action onClick={() => setStatsOpen(v => !v)}>
             <StatsIcon />
-            <span>Статистика</span>
+            <span>
+              <Trans id="Vcj5Mb" />
+            </span>
           </Action>
         </ActionsRow>
         <Question

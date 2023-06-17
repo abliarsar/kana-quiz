@@ -1,0 +1,131 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2023-05-22 10:13+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/pages/home/index.tsx:17
+#: js-lingui-id: kcZJIy
+msgid "Без вариантов ответа"
+msgstr "No answers"
+
+#: src/features/quiz/components/stats-by-glyph.tsx:43
+#: js-lingui-id: ex64Zh
+msgid "Верно"
+msgstr "Correct"
+
+#: src/features/quiz/components/question/index.tsx:78
+#: js-lingui-id: Y19rjb
+msgid "Верно!"
+msgstr "Correct!"
+
+#: src/pages/home/index.tsx:12
+#: js-lingui-id: 0dxyV8
+msgid "Выберите тест"
+msgstr "Choose a test variant"
+
+#: src/features/quiz/components/question/index.tsx:82
+#: js-lingui-id: iG55Fl
+msgid "Выберите хотя бы одну категорию"
+msgstr "Select at least one category"
+
+#: src/features/quiz/components/settings.tsx:15
+#: js-lingui-id: 1S+Slr
+msgid "Диграфы"
+msgstr "Digraphs"
+
+#: src/features/quiz/components/settings.tsx:16
+#: js-lingui-id: 5S7klo
+msgid "Диграфы c диакритикой"
+msgstr "Digraphs diacritics"
+
+#: src/features/quiz/components/settings.tsx:10
+#: js-lingui-id: MFSuHZ
+msgid "Катакана"
+msgstr "Katakana"
+
+#: src/features/quiz/components/settings.tsx:13
+#: js-lingui-id: ZtuqKW
+msgid "Монографы"
+msgstr "Monographs"
+
+#: src/features/quiz/components/settings.tsx:14
+#: js-lingui-id: Wr0wv0
+msgid "Монографы c диакритикой"
+msgstr "Monographs diacritic"
+
+#: src/features/quiz/components/quiz.tsx:72
+#: js-lingui-id: Z3HtMJ
+msgid "Настройки"
+msgstr "Settings"
+
+#: src/features/quiz/components/stats-by-glyph.tsx:30
+#: js-lingui-id: En1wua
+msgid "Нет результатов"
+msgstr "No results"
+
+#: src/features/quiz/components/question/index.tsx:92
+#: js-lingui-id: 9MvIiy
+msgid "Ответить"
+msgstr "Submit"
+
+#: src/features/quiz/components/stats-by-glyph.tsx:44
+#: js-lingui-id: sdXtd/
+msgid "Ошибок"
+msgstr "Errors"
+
+#: src/pages/home/index.tsx:22
+#: src/pages/home/index.tsx:30
+#: js-lingui-id: pzNAnq
+msgid "С вариантами ответов"
+msgstr "With answers"
+
+#: src/features/quiz/components/quiz.tsx:80
+#: js-lingui-id: J3SAYT
+msgid "Сброс"
+msgstr "Reset"
+
+#: src/features/color-mode/toggle.tsx:45
+#: js-lingui-id: I2XefD
+msgid "Светлый режим"
+msgstr "Light mode"
+
+#: src/features/quiz/components/stats-by-glyph.tsx:42
+#: js-lingui-id: iYI1rv
+msgid "Символ"
+msgstr "Glyph"
+
+#: src/features/quiz/components/question/index.tsx:101
+#: js-lingui-id: tsIrIK
+msgid "Следующий вопрос"
+msgstr "Next question"
+
+#: src/features/quiz/components/quiz.tsx:88
+#: src/features/quiz/components/stats-by-glyph.tsx:21
+#: js-lingui-id: Vcj5Mb
+msgid "Статистика"
+msgstr "Stats"
+
+#: src/features/color-mode/toggle.tsx:40
+#: js-lingui-id: 3czpIy
+msgid "Тёмный режим"
+msgstr "Dark mode"
+
+#: src/features/quiz/components/settings.tsx:9
+#: js-lingui-id: CKIRRi
+msgid "Хирагана"
+msgstr "Hiragana"
+
+#: src/features/color-mode/toggle.tsx:35
+#: js-lingui-id: HpP7vI
+msgid "Цветовая схема"
+msgstr "Color mode"

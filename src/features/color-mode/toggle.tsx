@@ -1,5 +1,6 @@
 import { useLayoutEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Trans } from '@lingui/react';
 
 
 type ColorMode = 'light' | 'dark';
@@ -30,9 +31,15 @@ const ColorModeToggle = () => {
       <Select name="color-mode" id="color-mode" value={mode} onChange={(e) => {
         setMode(e.target.value as ColorMode)
       }}>
-        <option value="" disabled>Цветовая схема</option>
-        <option value="dark">Тёмный режим</option>
-        <option value="light">Светлый режим</option>
+        <option value="" disabled>
+          <Trans id="HpP7vI" />
+        </option>
+        <option value="dark">
+          <Trans id="3czpIy" />
+        </option>
+        <option value="light">
+          <Trans id="I2XefD" />
+        </option>
       </Select>
     </div>
   )

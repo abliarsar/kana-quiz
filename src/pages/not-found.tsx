@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { paths } from './paths';
 
+// todo: github doesnt work with SPA
 const NotFoundPage = () => {
   return (
     <div>

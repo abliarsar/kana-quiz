@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import classNames from 'classnames';
+import { Trans } from '@lingui/react';
 
 import { IQuestion, QuestionState, QuizType } from 'features/quiz/types';
 import QuestionGlyph from './glyph';
@@ -74,11 +75,11 @@ const Question = ({ answers, question, onNextQuestion, onSubmitUserAnswer, quizT
         correct: state === QuestionState.correct,
       })}>
         {state === QuestionState.wrong && <div>{error}</div>}
-        {state === QuestionState.correct && <div>Верно!</div>}
+        {state === QuestionState.correct && <div><Trans id="Y19rjb" /></div>}
       </Status>
       {isEmpty && (
         <Status className="wrong">
-          Выберите хотя бы одну категорию
+          <Trans id="iG55Fl" />
         </Status>
       )}
       <ButtonContainer>
@@ -88,7 +89,7 @@ const Question = ({ answers, question, onNextQuestion, onSubmitUserAnswer, quizT
             disabled={state !== QuestionState.in_progress}
             onClick={() => onSubmitUserAnswer(result)}
           >
-            Ответить
+            <Trans id="9MvIiy" />
           </Button>
         )}
         <Button
@@ -97,7 +98,7 @@ const Question = ({ answers, question, onNextQuestion, onSubmitUserAnswer, quizT
           disabled={isEmpty}
           onClick={() => onNextQuestion()}
         >
-          Следующий вопрос
+          <Trans id="tsIrIK" />
         </Button>
       </ButtonContainer>
     </Form>

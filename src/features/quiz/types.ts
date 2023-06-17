@@ -43,5 +43,5 @@ export type SymbolGroupType = {
 
 export type AnswerStats = [correct: number, wrong: number]
 
-export type StatsByGlyph = Record<string, AnswerStats>
-export type StatsByType = Record<KanaType, AnswerStats>
+export type IStatsByGlyph = Record<string, AnswerStats>
+export type IStatsByType = Record<KanaType, AnswerStats>

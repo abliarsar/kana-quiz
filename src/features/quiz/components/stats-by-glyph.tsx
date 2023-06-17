@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
+import { Trans } from '@lingui/react';
 
 import {getPercentsFromStats} from 'lib/get-percents-from-stats'
-import { StatsByGlyph as StatsByGlyphType } from 'features/quiz/types';
+import { IStatsByGlyph as StatsByGlyphType } from 'features/quiz/types';
 
 
-// todo types
 interface StatsByGlyphProps {
   stats: StatsByGlyphType | undefined
 }
@@ -15,21 +15,28 @@ const StatsByGlyph = ({ stats = {} }: StatsByGlyphProps) => {
 
  const keys = Object.keys(stats);
 
+ const header = (
+   <h3>
+     <Trans id="Vcj5Mb" />
+   </h3>
+ )
   if (keys.length === 0) return (
     <Styles>
-      <h3>Статистика</h3>
-      <div className="centered">Нет результатов</div>
+      {header}
+      <div className="centered">
+        <Trans id="En1wua" />
+      </div>
     </Styles>
   )
   return (
     <Styles>
-      <h3>Статистика</h3>
+      {header}
       <Table>
        <thead>
        <tr>
-         <th>Символ</th>
-         <th >Верно</th>
-         <th>Ошибок</th>
+         <th><Trans id="iYI1rv" /></th>
+         <th ><Trans id="ex64Zh" /></th>
+         <th><Trans id="sdXtd/" /></th>
          <th>%</th>
        </tr>
        </thead>

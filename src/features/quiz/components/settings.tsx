@@ -1,18 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Trans } from '@lingui/react';
 import {SYMBOL_GROUPS} from 'lib/kana'
-import { KanaType, SymbolGroupTag, SymbolGroupType, SymbolType } from '../types';
+import { KanaType, SymbolGroupTag, SymbolType } from '../types';
 
 
 const KANA_NAMES = {
-  [KanaType.hiragana]: 'Хирагана',
-  [KanaType.katakana]: 'Катакана',
+  [KanaType.hiragana]: <Trans id="CKIRRi" />,
+  [KanaType.katakana]: <Trans id="MFSuHZ" />,
 }
 const GROUP_NAMES = {
-  [SymbolType.monograph]: 'Монографы',
-  [SymbolType.monograph_diacritics]: 'Монографы c диакритикой',
-  [SymbolType.digraph]: 'Диграфы',
-  [SymbolType.digraph_diacritics]: 'Диграфы c диакритикой',
+  [SymbolType.monograph]: <Trans id="ZtuqKW" />,
+  [SymbolType.monograph_diacritics]: <Trans id="Wr0wv0" />,
+  [SymbolType.digraph]: <Trans id="1S+Slr" />,
+  [SymbolType.digraph_diacritics]: <Trans id="5S7klo" />,
 }
 
 const symbolGroupTags = SYMBOL_GROUPS.map(i => i.type)

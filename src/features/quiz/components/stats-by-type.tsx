@@ -1,23 +1,24 @@
-import React from 'react'
+import React, { ReactNode } from 'react';
 import styled from 'styled-components'
+import { Trans } from '@lingui/react'
 
 import {getPercentsFromStats} from 'lib/get-percents-from-stats'
-import { AnswerStats, KanaType, StatsByType } from 'features/quiz/types';
+import { AnswerStats, KanaType, IStatsByType } from 'features/quiz/types';
 
 
 interface StatsByTypeProps {
-  stats: StatsByType | undefined
+  stats: IStatsByType | undefined
 }
 
 const StatsByType = ({ stats }: StatsByTypeProps) => {
   return (
     <Styles>
       <StatBlock
-        title="Хирагана"
+        title={<Trans id="CKIRRi"/>}
         stats={stats?.[KanaType.hiragana]}
       />
       <StatBlock
-        title="Катакана"
+        title={<Trans id="MFSuHZ"/>}
         stats={stats?.[KanaType.katakana]}
       />
     </Styles>
@@ -31,7 +32,7 @@ const Styles = styled.section`
   display: flex;
   justify-content: space-between;
 `
-const StatBlock = (props: { stats: AnswerStats | undefined, title: string }) => {
+const StatBlock = (props: { stats: AnswerStats | undefined, title: ReactNode }) => {
   const [correct, wrong] = props.stats || [0, 0]
   return (
     <StatsSectionStyles>
